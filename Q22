@@ -1,0 +1,27 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+
+        int month = sc.nextInt();
+        int rentPerDay = sc.nextInt();
+        int daysStayed = sc.nextInt();
+
+        if (month < 1 || month > 12) {
+            System.out.println("Invalid Input");
+            return;
+        }
+        boolean isPeakSeason = (month >= 4 && month <= 6) || (month == 11 || month == 12);
+        double totalTariff;
+        if (isPeakSeason) {
+            totalTariff = rentPerDay * 1.2 * daysStayed;
+        } else {
+            totalTariff = rentPerDay * daysStayed;
+        }
+        System.out.println((int)totalTariff);
+    }
+}
