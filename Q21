@@ -1,0 +1,36 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+
+        int fp = sc.nextInt();
+        int fd = sc.nextInt();
+        int fs = sc.nextInt();
+        int sp = sc.nextInt();
+        int sd = sc.nextInt();
+        int ss = sc.nextInt();
+        int ap = sc.nextInt();
+        int ad = sc.nextInt();
+        int aship = sc.nextInt();
+
+        int flipkartPrice = (int)(fp - (fp * fd / 100.0) + fs);
+        int snapdealPrice = (int)(sp - (sp * sd / 100.0) + ss);
+        int amazonPrice = (int)(ap - (ap * ad / 100.0) + aship);
+
+        System.out.println("In Flipkart: Rs." + flipkartPrice);
+        System.out.println("In Snapdeal: Rs." + snapdealPrice);
+        System.out.println("In Amazon: Rs." + amazonPrice);
+        
+        if (flipkartPrice <= snapdealPrice && flipkartPrice <= amazonPrice) {
+            System.out.println("Choose Flipkart");
+        } else if (snapdealPrice <= amazonPrice) {
+            System.out.println("Choose Snapdeal");
+        } else {
+            System.out.println("Choose Amazon");
+        }
+    }
+}
